@@ -115,6 +115,17 @@ body.locked {
   font-size: .65em;
 }
 
+.opening h1 .opening-couple {
+  display: block;
+  margin-top: 8px;
+  font-size: .58em;
+  line-height: 1;
+}
+
+.opening h1 .opening-couple b {
+  font-size: .7em;
+}
+
 .envelope {
   position: relative;
   width: min(76vw, 300px);
