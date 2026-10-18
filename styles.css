@@ -415,6 +415,18 @@ h2 {
   margin: 6px 0;
 }
 
+.hero-portrait {
+  display: block;
+  width: min(88vw, 520px);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 36%;
+  margin: 8px 0 0;
+  border: 1px solid var(--gold);
+  border-radius: 48% 48% 10px 10px / 18% 18% 10px 10px;
+  box-shadow: 0 0 0 7px color-mix(in srgb, var(--bg) 90%, transparent), 0 0 0 8px var(--gold), 0 24px 50px -28px var(--camel);
+}
+
 .draw * {
   --d: 0s;
   fill: none;
@@ -689,6 +701,96 @@ select {
 
 .memories-section {
   padding-top: 34px;
+}
+
+.couples-section {
+  padding-top: 44px;
+  padding-bottom: 48px;
+}
+
+.couples-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.couple-card {
+  position: relative;
+  padding: 14px 14px 24px;
+  border: 1px solid var(--gold);
+  border-radius: 9px 30px 9px 30px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, #D9A79A), var(--card));
+  box-shadow: 0 22px 50px -34px var(--camel);
+  transition: transform .35s ease, border-radius .45s ease, box-shadow .35s ease;
+}
+
+.couple-card:hover {
+  transform: translateY(-6px);
+  border-radius: 30px 9px 30px 9px;
+  box-shadow: 0 26px 54px -30px var(--camel);
+}
+
+.couple-photo-frame {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--gold) 78%, transparent);
+  border-radius: 7px 24px 7px 24px;
+  background: var(--soft);
+}
+
+.couple-photo-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.couple-card:hover .couple-photo-frame img {
+  transform: scale(1.035);
+}
+
+.couple-label,
+.couple-contact {
+  margin: 14px 0 0;
+  color: var(--camel);
+  font-size: 13px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.couple-contact {
+  margin-top: 8px;
+  letter-spacing: .08em;
+  text-transform: none;
+}
+
+.couple-card h3 {
+  margin: 2px 0 0;
+  color: var(--camel);
+  font: 400 clamp(30px, 5vw, 44px) 'Great Vibes', cursive;
+}
+
+.couple-card h3 span {
+  font-size: .6em;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contact-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  font-size: 15px;
+}
+
+.hero .draw.stage {
+  display: none;
 }
 
 .memories {
@@ -967,6 +1069,11 @@ footer .names {
   .memories {
     grid-template-columns: 1fr;
     max-width: 300px;
+  }
+
+  .couples-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
   }
 
   .memory {
