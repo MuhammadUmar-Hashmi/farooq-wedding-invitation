@@ -20,9 +20,13 @@ document.getElementById("events").innerHTML = EVENTS.map(function (event) {
 // Open the invitation from its envelope scene.
 document.body.classList.add("locked");
 document.getElementById("openInvitation").addEventListener("click", function () {
-  document.getElementById("opening").classList.add("is-open");
-  document.body.classList.remove("locked");
+  var opening = document.getElementById("opening");
+  opening.classList.add("is-opening");
   startMusic();
+  setTimeout(function () {
+    opening.classList.add("is-open");
+    document.body.classList.remove("locked");
+  }, 1150);
 });
 
 var music = document.getElementById("weddingMusic");
