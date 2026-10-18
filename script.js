@@ -155,7 +155,7 @@ if ("IntersectionObserver" in window) {
 (function () {
   var garland = document.getElementById("gar");
   var garlandColors = ["#E6C98A", "#C19A6B", "#E0A53A", "#D8B47A"];
-  var garlandCount = Math.max(6, Math.min(24, Math.ceil(innerWidth / 48)));
+  var garlandCount = Math.max(5, Math.min(16, Math.ceil(innerWidth / 64)));
 
   for (var i = 0; i < garlandCount; i++) {
     var strand = document.createElement("div");
